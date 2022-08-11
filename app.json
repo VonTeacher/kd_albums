@@ -1,0 +1,23 @@
+{
+  "name": "kd-albums",
+  "description": "kd-albums list",
+  "repository": "https://github.com/VonTeacher/kd_albums",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "11.15"
+      }
+    }
+  ],
+  "environments": {
+    "test": {
+      "addons": [
+        "heroku-postgresql:in-dyno"
+      ],
+      "scripts": {
+        "test": "bundle exec rspec"
+      }
+    }
+  }
+}
