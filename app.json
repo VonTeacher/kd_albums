@@ -1,0 +1,14 @@
+{
+  "name": "kd-albums",
+  "description": "kd-albums list",
+  "repository": "https://github.com/VonTeacher/kd_albums",
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "11.15"
+      }
+    }
+  ],
+  "stack": "heroku-20"
+}
