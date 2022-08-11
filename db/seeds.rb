@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "Seeding database..."
+
+artist = Artist.create(name: "Paul McCartney")
+
+album_names = ["Tug of War", "Ram", "Pipes of Peace"]
+
+album_names.each do |album_name|
+  Album.create(title: album_name, artist: artist)
+  puts "Created #{artist.name} album, `#{album_name}`"
+end
+
+puts "Seeding complete!"
