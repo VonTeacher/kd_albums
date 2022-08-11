@@ -13,10 +13,13 @@
   "environments": {
     "test": {
       "addons": [
-        "heroku-postgresql:in-dyno"
+        "heroku-postgresql"
       ],
-      "scripts": {
-        "test": "bundle exec rspec"
+      "formation": {
+        "test": {
+          "quantity": 1,
+          "size": "free"
+        }
       }
     }
   }
