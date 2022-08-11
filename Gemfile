@@ -5,6 +5,7 @@ ruby "3.1.2"
 
 gem "factory_bot_rails"
 gem "friendly_id", "~> 5.4.0"
+gem "graphql"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
@@ -16,4 +17,5 @@ group :development, :test do
 end
 
 group :development do
+  gem "graphiql-rails"
 end
