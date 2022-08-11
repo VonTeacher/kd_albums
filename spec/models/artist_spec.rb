@@ -7,8 +7,8 @@ RSpec.describe Artist, type: :model do
       let(:name) { nil }
 
       context "when exists" do
-        let(:name) { Faker::Music.band }
-        
+        let(:name) { "TEST BAND" }
+
         it { expect(artist).to be_valid }
       end
 
