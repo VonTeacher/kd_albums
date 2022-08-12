@@ -7,11 +7,16 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :slug, String
-    #custom fields
+    # custom fields
     field :album_count, Integer, null: true
+    field :albums, [Types::AlbumType]
 
     def album_count
       object.albums.size
+    end
+
+    def albums
+      object.albums
     end
   end
 end

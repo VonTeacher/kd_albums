@@ -20,7 +20,7 @@ module Types
     end
 
     def artist(name:)
-      Artist.find_by(name: name)
+      Artist.includes(:albums).find_by(name: name)
     end
   end
 end
