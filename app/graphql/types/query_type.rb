@@ -22,5 +22,21 @@ module Types
     def artist(name:)
       Artist.includes(:albums).find_by(name: name)
     end
+
+    # Get all albums
+    field :albums, [Types::AlbumType], null: false
+
+    def albums
+      Album.all
+    end
+
+    # Get a specific album by name
+    field :album, Types::AlbumType, null: false do
+      argument :title, String, required: true
+    end
+
+    def album(title:)
+      Album.find_by(title: title)
+    end
   end
 end
