@@ -7,11 +7,20 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    # Get all artists
+    field :artists, [Types::ArtistType], null: false
+
+    def artists
+      Artist.all
+    end
+
+    # Get a specific artist by name
+    field :artist, Types::ArtistType, null: false do
+      argument :name, String, required: true
+    end
+
+    def artist(name:)
+      Artist.find_by(name: name)
     end
   end
 end
