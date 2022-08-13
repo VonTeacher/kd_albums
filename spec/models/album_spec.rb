@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe Album, type: :model do
   describe "validations" do
     describe "title" do
-      let(:album) { build(:album, title: title, artist: artist) }
+      let(:album) { build(:album, title: title, artist: artist, user: user) }
       let(:artist) { create(:artist) }
       let(:title) { nil }
+      let(:user) { create(:user) }
 
       context "when exists" do
         let(:title) { "TEST ALBUM" }
@@ -14,8 +15,8 @@ RSpec.describe Album, type: :model do
       end
 
       context "when duplicate for an artist" do
-        let!(:existing_album) { create(:album, title: title, artist: artist) }
-        let(:duplicate_album) { build(:album, title: title, artist: artist) }
+        let!(:existing_album) { create(:album, title: title, artist: artist, user: user) }
+        let(:duplicate_album) { build(:album, title: title, artist: artist, user: user) }
         let(:title) { "TEST ALBUM" }
 
         it { expect(duplicate_album).not_to be_valid }
