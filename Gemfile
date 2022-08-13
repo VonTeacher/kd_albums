@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+gem "bcrypt"
 gem "factory_bot_rails"
 gem "friendly_id", "~> 5.4.0"
 gem "graphql"
