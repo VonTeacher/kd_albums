@@ -11,6 +11,7 @@ module Types
     # custom fields
     field :artist, String
     field :artist_slug, String
+    field :user, String
 
     def artist
       object.artist.name
@@ -18,6 +19,10 @@ module Types
 
     def artist_slug
       object.artist.slug
+    end
+
+    def user
+      object.user.name
     end
   end
 end
