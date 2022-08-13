@@ -12,9 +12,7 @@
 #       id
 #       title
 #       artist
-#       user {
-#         name
-#       }
+#       user
 #     }
 #   }
 # }
