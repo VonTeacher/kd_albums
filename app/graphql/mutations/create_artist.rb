@@ -1,3 +1,19 @@
+# frozen_string_literal: true
+
+# mutation {
+#   createArtist(input:
+#     {
+#     	name:"Name"
+#   	}
+#   ) {
+#     artist {
+#       id
+#       name
+#       slug
+#     }
+#   }
+# }
+
 class Mutations::CreateArtist < Mutations::BaseMutation
   argument :name, String, required: true
 
