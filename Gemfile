@@ -15,9 +15,6 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
-  gem "rspec-rails"
-end
-
-group :development do
   gem "graphiql-rails"
+  gem "rspec-rails"
 end
