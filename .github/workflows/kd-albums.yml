@@ -1,22 +1,4 @@
-# name: GitHub Actions Demo
-# on: [push]
-# jobs:
-#   Explore-GitHub-Actions:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-#       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-#       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-#       - name: Check out repository code
-#         uses: actions/checkout@v3
-#       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-#       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-#       - name: List files in the repository
-#         run: |
-#           ls ${{ github.workspace }}
-#       - run: echo "🍏 This job's status is ${{ job.status }}."
-
-# This workflow uses actions that are not certified by GitHub.  They are
+# This workflow uses actions that are not certified by GitHub. They are
 # provided by a third-party and are governed by separate terms of service,
 # privacy policy, and support documentation.
 #
@@ -24,10 +6,6 @@
 # run tests and linters.
 name: "KD Albums"
 on: [push, pull_request]
-  # push:
-  #   branches: [ $default-branch ]
-  # pull_request:
-  #   branches: [ $default-branch ]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -57,20 +35,3 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
-
-  # lint:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3
-  #     - name: Install Ruby and gems
-  #       uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
-  #       with:
-  #         bundler-cache: true
-  #     # Add or replace any other lints here
-  #     - name: Security audit dependencies
-  #       run: bin/bundler-audit --update
-  #     - name: Security audit application code
-  #       run: bin/brakeman -q -w2
-  #     - name: Lint Ruby files
-  #       run: bin/rubocop --parallel
